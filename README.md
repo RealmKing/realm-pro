@@ -41,6 +41,8 @@
 * 安装redis数据库 默认数据库密码为空(注*** 必须安装redis 否则本系统会报错)
 * redis的window版本有些地方下载可以下不下来,可以到这里下载`https://pan.baidu.com/s/1dG22JQT`  
 * 注册redis系统服务 打开cmd--->切换到安装redis的目录--->`redis-server.exe --service-install redis.windows-service.conf`
-* 启动系统 预览地址为:`http://localhost:8080`  管理员用户名：`test` 密码：`1`
+* 启动系统 预览地址为:`http://localhost:8080`  管理员用户名：`realm` 密码：`1`
+
+各位同仁，为确保我们框架的升级，如有良好的建议请批评指正！！！代码将持续更新
 
  
