@@ -5,7 +5,7 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.realmcloud.admin.base.BlogHandlerInterceptor;
 import com.realmcloud.admin.base.MyHandlerInterceptor;
-import com.realmcloud.admin.base.ProJiXieHandlerInterceptor;
+import com.realmcloud.admin.base.ProShuKongHandlerInterceptor;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
@@ -98,13 +98,13 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyHandlerInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login","/login/main","/logout","/genCaptcha","/static/**","/showBlog/**","/projixie/**");
+                .excludePathPatterns("/login","/login/main","/logout","/genCaptcha","/static/**","/showBlog/**","/proShuKong/**");
         //博客
         registry.addInterceptor(new BlogHandlerInterceptor())
                 .addPathPatterns("/showBlog/**");
         //添加一新网站-机械网站
-        registry.addInterceptor(new ProJiXieHandlerInterceptor())
-                .addPathPatterns("/projixie/**");
+        registry.addInterceptor(new ProShuKongHandlerInterceptor())
+                .addPathPatterns("/proShuKong/**");
         super.addInterceptors(registry);
     }
 }

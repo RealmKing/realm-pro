@@ -71,7 +71,7 @@ public class ShiroConfig {
         //配置访问权限
         LinkedHashMap<String, String> filterChainDefinitionMap = Maps.newLinkedHashMap();
         filterChainDefinitionMap.put("/static/**","anon");
-        filterChainDefinitionMap.put("/projixie/**","anon");
+        filterChainDefinitionMap.put("/proShuKong/**","anon");
         filterChainDefinitionMap.put("/showBlog/**","anon");
         filterChainDefinitionMap.put("/blog/**","anon");
         filterChainDefinitionMap.put("/login/main","anon");
