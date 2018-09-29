@@ -328,28 +328,6 @@ public class LoginController extends BaseController {
         return blogTagsService.listAll().size();
     }
 
-    /**
-     * 统计定时任务数量
-     *
-     * @return
-     */
-    @GetMapping("/static/admin/quartzTask/list")
-    @ResponseBody
-    public Integer getQuartzTaskStatistics() {
-        int str = quartzTaskService.selectCount(new EntityWrapper<QuartzTask>().eq("del_flag", false));
-        return str;
-    }
-
-    /**
-     * 统计定时任务日志数量
-     *
-     * @return
-     */
-    @GetMapping("/static/admin/quartzTaskLog/list")
-    @ResponseBody
-    public Integer getQuartzTaskLogStatistics() {
-        return quartzTaskLogService.selectCount(new EntityWrapper<QuartzTaskLog>().eq("del_flag", false));
-    }
 
 }
 

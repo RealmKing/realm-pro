@@ -89,7 +89,7 @@ mybatis-plus:
 #开发环境配置
 server:
   #端口
-  port: 8080
+  port: 8085
 spring:
   profiles: dev
   #redis配置
