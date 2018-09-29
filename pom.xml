@@ -35,7 +35,7 @@
 		<jackson.version>2.9.3</jackson.version>
 		<druid.version>1.0.2</druid.version>
 		<guava.version>17.0</guava.version>
-		<quartz.version>2.3.0</quartz.version>
+		<!--<quartz.version>2.3.0</quartz.version>-->
 		<org.projectlombok.lombok>1.18.0</org.projectlombok.lombok>
 	</properties>
 
@@ -161,18 +161,18 @@
 			<version>${mybatisplus.version}</version>
 		</dependency>
 
-		<!--定时任务-->
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>${quartz.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.mchange</groupId>
-					<artifactId>c3p0</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		<!--&lt;!&ndash;定时任务&ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.quartz-scheduler</groupId>-->
+			<!--<artifactId>quartz</artifactId>-->
+			<!--<version>${quartz.version}</version>-->
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>com.mchange</groupId>-->
+					<!--<artifactId>c3p0</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
+		<!--</dependency>-->
 		<!--Getter Setter注解依赖-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
