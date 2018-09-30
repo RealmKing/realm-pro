@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+
+<#import "spring.ftl" as spring/>
 <head>
 <#include "${base}/proShuKong/common/header.ftl">
 	
@@ -9,11 +11,11 @@
 <div>
 	<!--header-->
 	<header class="header">
-		<!--<div class="container" style="text-align: -webkit-right; margin-top: 10px; margin-bottom: 10px;">
-			
-		
+		<div class="container" style="text-align: -webkit-right; margin-top: 10px; margin-bottom: 10px;">
+
+
 	        <div class="ensou">
-	    		<a href="#" class="en">EN</a>
+	    		<a href="${base}/proShuKong/changeSessionLanauage?lang=en" class="en">EN</a>
 	    		<a href="javascript:;" class="sou_img"><img src="${base}/static/proShuKong/images/fang.jpg" alt="" /></a>
 	    		<div class="sou_nei">
 	    			<input name="" id="" placeholder="输入关键词" type="">
@@ -23,7 +25,7 @@
 	    	<a href="#mmenu" class="iconfont phone-nav">
 	    		 <span class="glyphicon glyphicon-align-justify"></span>
 	    	</a>
-	    </div>	-->
+	    </div>
 	    <div class="kuan_heaaer clearfix container">
 	    	<a href="index.html" class="logo">
 	    		<img src="${base}/static/proShuKong/images/logo.jpg" alt="" />
@@ -31,7 +33,7 @@
 	    	<div class="nav_div">
 	    		<ul class="nav_ul">                                                                                                      
 	    			<li class="active">
-	    				<a href="index.html"><span>网站首页</span></a>
+	    				<a href="index.html"><span>网站首页<@spring.message "welcome" /></span></a>
 	    			</li>
 	    			<li>
 	    				<a href="about.html"><span>关于我们</span></a>
@@ -354,6 +356,25 @@ $(document).ready(function(){
 			eventB:'mouseleave'
 	});
 });
+function changeLanguage() {
+    $.ajax({
+        type:"GET",
+        url:"${base}/proShuKong/changeSessionLanauage",
+        dataType:"json",
+        contentType:"application/json",
+        data:{lang:"en"},
+        success:function(res){
+            layer.close(loadIndex);
+            if(res.success){
+                parent.layer.msg("用户编辑成功！",{time:1500},function(){
+                    parent.location.reload();
+                });
+            }else{
+                layer.msg(res.message);
+            }
+        }
+    });
+}
 </script> 
 <script>
 //滚动
