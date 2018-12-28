@@ -37,6 +37,8 @@
 		<guava.version>17.0</guava.version>
 		<!--<quartz.version>2.3.0</quartz.version>-->
 		<org.projectlombok.lombok>1.18.0</org.projectlombok.lombok>
+		<!--打包部署，启动跳过测试再打包-->
+		<skipTests>true</skipTests>
 	</properties>
 
 	<repositories>
@@ -291,6 +293,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+
 			</plugin>
 		</plugins>
 	</build>

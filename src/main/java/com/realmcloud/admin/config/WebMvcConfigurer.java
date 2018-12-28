@@ -98,7 +98,10 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyHandlerInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login","/login/main","/logout","/genCaptcha","/static/**","/showBlog/**","/proShuKong/**");
+                .excludePathPatterns("/login","/login/main","/logout","/genCaptcha","/static/**","/showBlog/**","/proShuKong/**","/api/**");
+//        registry.addInterceptor(new MyHandlerInterceptor())
+//                .addPathPatterns("/admin/**")
+//                .excludePathPatterns("/**");
         //博客
         registry.addInterceptor(new BlogHandlerInterceptor())
                 .addPathPatterns("/showBlog/**");
