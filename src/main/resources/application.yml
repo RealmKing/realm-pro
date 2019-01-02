@@ -93,7 +93,7 @@ mybatis-plus:
 #开发环境配置
 server:
   #端口
-  port: 8085
+  port: 80
 spring:
   profiles: dev
   #redis配置
@@ -112,7 +112,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/realm-pro?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
     username: root
-    password: 123456
+    password: Ocean901206
 
 
 #日志

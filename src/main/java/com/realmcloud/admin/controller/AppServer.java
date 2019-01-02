@@ -1,6 +1,7 @@
 package com.realmcloud.admin.controller;
 
 
+import com.realmcloud.admin.base.BaseController;
 import com.realmcloud.admin.util.RestResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/api")
-public class AppServer {
+public class AppServer  extends BaseController {
 
     @GetMapping("/test")
     @ResponseBody

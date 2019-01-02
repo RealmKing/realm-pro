@@ -77,8 +77,9 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/login/main","anon");
         filterChainDefinitionMap.put("/genCaptcha","anon");
         filterChainDefinitionMap.put("/systemLogout","authc");
-        filterChainDefinitionMap.put("/**","authc");
         filterChainDefinitionMap.put("/api/**","anon");
+        filterChainDefinitionMap.put("/**","authc");
+
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean;
     }
