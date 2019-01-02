@@ -104,6 +104,9 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 //                .excludePathPatterns("/**");
         //博客
         registry.addInterceptor(new BlogHandlerInterceptor())
+                .addPathPatterns("/api/**");
+        //博客
+        registry.addInterceptor(new BlogHandlerInterceptor())
                 .addPathPatterns("/showBlog/**");
         //添加一新网站-机械网站
         registry.addInterceptor(new ProShuKongHandlerInterceptor())
