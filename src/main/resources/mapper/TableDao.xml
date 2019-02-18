@@ -6,20 +6,20 @@
     <select id="selectTableCount" resultType="java.lang.Integer">
         select count(*)
         from information_schema.tables
-        where table_schema='mysiteforme'
+        where table_schema='realm-pro'
     </select>
 
     <!--查询mysql数据表是否存在 -->
     <select id="existTable" parameterType="String" resultType="java.lang.Integer">
         select count(table_name)
         from information_schema.tables
-        where table_schema='mysiteforme' and table_name=#{tableName}
+        where table_schema='realm-pro' and table_name=#{tableName}
     </select>
 
     <select id="existTableField" parameterType="java.util.Map" resultType="java.lang.Integer">
         select count(*)
         from information_schema.columns
-        where table_schema ='mysiteforme'
+        where table_schema ='realm-pro'
         and table_name = #{tableName}
         and COLUMN_NAME = #{fieldName}
     </select>
@@ -32,7 +32,7 @@
         CREATE_TIME as "createTime",
         UPDATE_TIME as "updateTime",
         TABLE_COMMENT as "comment"
-        from information_schema.TABLES where TABLE_SCHEMA='mysiteforme'
+        from information_schema.TABLES where TABLE_SCHEMA='realm-pro'
     </select>
     <!--查询所有表（分页）-->
     <select id="listPage" resultType="com.realmcloud.admin.entity.VO.TableVO">
@@ -42,7 +42,7 @@
         CREATE_TIME as "createTime",
         UPDATE_TIME as "updateTime",
         TABLE_COMMENT as "comment"
-        from information_schema.TABLES where TABLE_SCHEMA='mysiteforme'
+        from information_schema.TABLES where TABLE_SCHEMA='realm-pro'
         <if test="name != null and name != ''">
             and TABLE_NAME like CONCAT('%', '${name}', '%')
         </if>
@@ -79,7 +79,7 @@
         FROM
         INFORMATION_SCHEMA.Columns  c
         left join (select * from sys_dict where parent_id = '0' and del_flag = false) d on d.type = CONCAT(c.TABLE_NAME,"_",c.COLUMN_NAME)
-        where c.table_name=#{name} and c.table_schema='mysiteforme'
+        where c.table_name=#{name} and c.table_schema='realm-pro'
         <if test="tableType != null and tableType == 1">
             and COLUMN_NAME not in ('id','create_date','create_by','update_date','update_by','remarks','del_flag')
         </if>
@@ -125,7 +125,7 @@
         where
         1 = 1
         and c.table_name=#{name}
-        and t.table_schema='mysiteforme'
+        and t.table_schema='realm-pro'
     </select>
 
 
